@@ -17,15 +17,15 @@ class CartItem extends React.Component{
         // this.state.qty +=1;
      console.log(this.state);
     //  setState form1
-     this.setState({
-        qty: this.state.qty+=1
-     });
-    // setstate form2
-    // this.setState((prevState) =>{
-    //    return{
-    //     qty: prevState.qty+1
-    //    } 
+    //  this.setState({
+    //     qty: this.state.qty+=1
     //  });
+    // setstate form2-if previous state required
+    this.setState((prevState) =>{
+       return{
+        qty: prevState.qty+1
+       } 
+     });
     
     }
     render(){
