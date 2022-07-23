@@ -1,7 +1,7 @@
 import { buildQueries } from "@testing-library/react";
 import React from "react";
 
-class CartItem extends React.Component{
+const CartItem = (props) =>{
     // constructor(){
     //     super();
     //     this.state={
@@ -42,17 +42,17 @@ class CartItem extends React.Component{
     //  });
     // }
      
-    render(){
-        const {price,title,qty}=this.props.product;
+    
+        const {price,title,qty}=props.product;
         const {product,
             onIncreaseQuantity,
             onDecreaseQuantity,
             onDeleteProduct
-        }=this.props;
+        }=props;
         return(
             <div className="cart-item">
               <div className="left-block">
-                <img style={styles.image}/>
+                <img style={styles.image} src={product.img}/>
               </div> 
               <div className="right-block">
                 <div style={{fontSize:25}}>{title}</div>
@@ -74,14 +74,14 @@ class CartItem extends React.Component{
                     <img alt="delete" 
                     className="action-icons" 
                     src="https://cdn-icons-png.flaticon.com/128/1214/1214428.png"
-                    onClick={()=>onDeleteProduct(product.id)} 
+                    onClick={()=>onDeleteProduct(product.id )} 
                     />
                 </div>
                 </div> 
             </div>
         );
     }
-}
+
 const styles={
     image:{
         height:110,
